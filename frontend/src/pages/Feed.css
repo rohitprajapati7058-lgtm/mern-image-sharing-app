@@ -1,0 +1,25 @@
+button {
+  background-color: #ff4400; /* Primary Blue */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  
+  /* Smooth transition effect */
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+button:hover {
+  background-color: #b30000; /* Darker Blue */
+  transform: translateY(-2px); /* Moves up by 2 pixels */
+}
+button:active {
+  transform: translateY(0); /* Pushes down back to normal position */
+}
+
+.sub-section{
+  display: flex;                  /* Activates Flexbox layout layout */
+  justify-content: space-between; /* Pushes text to the left and button to the right */
+  align-items: center; 
+}
