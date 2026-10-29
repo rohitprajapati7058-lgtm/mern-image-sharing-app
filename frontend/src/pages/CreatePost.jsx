@@ -9,7 +9,7 @@ const CreatePost = () => {
     
     const formdata = new FormData(e.target)
 
-    axios.post("http://mern-image-sharing-app.onrender.com/create-post",formdata).then((res)=>{
+    axios.post("https://mern-image-sharing-app.onrender.com/create-post",formdata).then((res)=>{
       console.log(res)
 
 
