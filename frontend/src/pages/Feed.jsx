@@ -5,11 +5,11 @@ import { useState } from 'react'
 import { useEffect} from 'react' // if dont use useEffect API automatically call again and again automatically 
 const Feed = () => {
 
-    const [posts, setPosts] = useState([{_id:'1',
-        Image: 'https://picsum.photos/400/250',
-        caption:"senery"
-}])
-
+//     const [posts, setPosts] = useState([{_id:'1',
+//         Image: 'https://picsum.photos/400/250',
+//         caption:"senery"
+// }])
+const [posts, setPosts] = useState([]);
 // const handleDelete =  async (postId) {
     // }
     
@@ -26,7 +26,7 @@ const Feed = () => {
     const handleDelete = async (postId) => {
       try {
         console.log("i am delete function")
-        await axios.delete(`http://mern-image-sharing-app.onrender.com/delete-post/${postId}`);
+        await axios.delete(`https://mern-image-sharing-app.onrender.com/delete-post/${postId}`);
     
         setPosts((prevPosts) =>
           prevPosts.filter((post) => post._id !== postId)
@@ -42,7 +42,7 @@ const Feed = () => {
 
             posts.length>0?(
                 posts.map((post)=>(
-                    <div className="postcard">
+                    <div className="postcard" key={post._id}>
                         <img src={post.Image} alt="image"/>
                         <div  className='sub-section' >
                         <p>{post.caption} </p> <button onClick={() => handleDelete(post._id)} >Delete</button>
