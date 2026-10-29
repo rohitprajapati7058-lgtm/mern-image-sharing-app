@@ -13,18 +13,20 @@ const Feed = () => {
 // const handleDelete =  async (postId) {
     // }
     
-    useEffect(()=>{
-        axios.get("http://localhost:3000/get-post").then((res)=>{
-            setPosts(res.data.posts)
+    useEffect(() => {
+    axios.get("https://mern-image-sharing-app.onrender.com/get-post")
+        .then((res) => {
+            setPosts(res.data.posts);
         })
-        
-        
-    },[])
+        .catch((err) => {
+            console.error("Error fetching posts:", err);
+        });
+}, []);
     
     const handleDelete = async (postId) => {
       try {
         console.log("i am delete function")
-        await axios.delete(`http://localhost:3000/delete-post/${postId}`);
+        await axios.delete(`http://mern-image-sharing-app.onrender.com/delete-post/${postId}`);
     
         setPosts((prevPosts) =>
           prevPosts.filter((post) => post._id !== postId)

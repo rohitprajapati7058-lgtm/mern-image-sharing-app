@@ -9,7 +9,7 @@ const CreatePost = () => {
     
     const formdata = new FormData(e.target)
 
-    axios.post("http://localhost:3000/create-post",formdata).then((res)=>{
+    axios.post("http://mern-image-sharing-app.onrender.com/create-post",formdata).then((res)=>{
       console.log(res)
 
 
